@@ -9,9 +9,9 @@ jdk:
   - oraclejdk7
   - oraclejdk8
 
-bundler_args: --without production development
-
-install: "rake deps"
+install:
+  - bundle install --without production development
+  - rake deps
 
 script:
   - bundle exec rubocop
