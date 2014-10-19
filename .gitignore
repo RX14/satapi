@@ -32,5 +32,6 @@ build/
 
 #Don't include libraries
 /lib/*.jar
+!/lib/predict4java-1.1.jar
 
 .fuse_hidden*

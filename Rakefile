@@ -34,8 +34,7 @@ namespace "deps" do
     end
 
     file "lib/predict4java-1.1.jar" do
-        get "http://jenkins.g4dpz.me.uk/job/predict4java/112/uk.me.g4dpz$predict4java/artifact/uk.me.g4dpz/predict4java/1.1/predict4java-1.1.jar",
-            "lib/predict4java-1.1.jar"
+        mvn "uk.me.g4dpz:predict4java:1.1", lib
     end
 
     task all: ["lib/commons-lang-2.6.jar",
