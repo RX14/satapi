@@ -2,6 +2,7 @@ require "bundler/setup"
 
 require "sinatra"
 require "json"
+require "orchestrate"
 
 require "java"
 require_relative "./lib/commons-lang-2.6.jar"
@@ -23,6 +24,9 @@ configure :development do
     use BetterErrors::Middleware
     BetterErrors.application_root = __dir__
 end
+
+db = Orchestrate::Application.new ENV["ORCHESTRATE_KEY"]
+TLEstore = db[:TLEs]
 
 ################################################################################
 
