@@ -2,8 +2,10 @@ require "open-uri"
 
 namespace "deps" do
 
-    def get(url, path)
-        File.open(path, "wb") do |file|
+    def get(url, file)
+        FileUtils.mkdir_p File.dirname(file)
+
+        File.open(file, "wb") do |file|
             open(url, "rb") do |web|
                 file.write(web.read)
             end
