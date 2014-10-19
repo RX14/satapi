@@ -17,13 +17,15 @@ namespace "deps" do
         parts[0].gsub!(".", "/")
 
         name = "#{parts[1]}-#{parts[2]}.jar"
-        url = "http://central.maven.org/maven2/#{parts[0]}/#{parts[1]}/#{parts[2]}/#{name}"
+        repo = "http://central.maven.org/maven2"
+        url = "#{repo}/#{parts[0]}/#{parts[1]}/#{parts[2]}/#{name}"
         out = "#{prefix}/#{name}"
 
         puts "Downloading: #{url} to #{out}"
         get url, out
     end
 
+################################################################################
 
     file "lib/commons-lang-2.6.jar" do
         mvn "commons-lang:commons-lang:2.6", "lib"
