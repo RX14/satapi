@@ -11,6 +11,8 @@ jdk:
 
 bundler_args: --without production development
 
+install: "rake deps"
+
 script:
   - bundle exec rubocop
   - shopt -s globstar && ruby -wc **/*.rb

@@ -32,3 +32,5 @@ build/
 
 #Don't include libraries
 /lib/*.jar
+
+.fuse_hidden*
