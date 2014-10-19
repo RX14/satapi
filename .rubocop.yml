@@ -1,0 +1,11 @@
+Style/CommentIndentation:
+  Enabled: false
+
+Style/IndentHash:
+  Enabled: false
+
+Style/IndentationWidth:
+  Enabled: false
+
+Style/StringLiterals:
+    EnforcedStyle: double_quotes

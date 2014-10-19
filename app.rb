@@ -1,6 +1,7 @@
+require "bundler/setup"
+
 require "sinatra"
 require "json"
-require "slim"
 
 require "java"
 require_relative "./lib/commons-lang-2.6.jar"
@@ -8,23 +9,22 @@ require_relative "./lib/commons-logging-1.1.1.jar"
 require_relative "./lib/predict4java-1.1.jar"
 
 configure :production do
-    require 'rack/cache'
+    require "rack/cache"
 
     use Rack::Cache,
-        :metastore   => 'file:/tmp/cache/rack/meta',
-        :entitystore => 'file:/tmp/cache/rack/body',
-        :verbose     => true
+        metastore:   "file:/tmp/cache/rack/meta",
+        entitystore: "file:/tmp/cache/rack/body",
+        verbose:     true
 end
 
 configure :development do
-    require "sinatra/reloader"
     require "better_errors"
 
     use BetterErrors::Middleware
     BetterErrors.application_root = __dir__
 end
 
-#===============================================================================
+################################################################################
 
 helpers do
 
@@ -33,12 +33,12 @@ helpers do
     end
 
     def normalise_endings(str)
-        str.encode(str.encoding, :universal_newline => true)
+        str.encode(str.encoding, universal_newline: true)
     end
 
 end
 
-before '/api/json/*' do
+before "/api/json/*" do
     pass if request.body.class == Puma::NullIO
     pass if request.body.size <= 0
 
@@ -48,7 +48,7 @@ end
 
 get "/api/json/" do
     schema = {
-        :TLE => ""
+        TLE: ""
     }
 end
 
@@ -59,31 +59,31 @@ post "/api/json/tle/extract" do
 
     TLE = uk.me.g4dpz.satellite.TLE.new(TLEdata.to_java :String)
 
-    rJSON = {}
-    rJSON[:catnum] = TLE.getCatnum
-    rJSON[:name] = TLE.getName
-    rJSON[:setnum] = TLE.getSetnum
-    rJSON[:year] = TLE.getYear
-    rJSON[:refepoch] = TLE.getRefepoch
-    rJSON[:inclination] = TLE.getIncl
-    rJSON[:raan] = TLE.getRaan
-    rJSON[:eccentricity] = TLE.getEccn
-    rJSON[:argper] = TLE.getArgper
-    rJSON[:mean_anomoly] = TLE.getMeanan
-    rJSON[:mean_motion] = TLE.getMeanmo
-    rJSON[:drag] = TLE.getDrag
-    rJSON[:nddot6] = TLE.getNddot6
-    rJSON[:bstar] = TLE.getBstar
-    rJSON[:orbitnum] = TLE.getOrbitnum
-    rJSON[:epoch] = TLE.getEpoch
-    rJSON[:xndt2o] = TLE.getXndt2o
-    rJSON[:xincl] = TLE.getXincl
-    rJSON[:xnodeo] = TLE.getXnodeo
-    rJSON[:eo] = TLE.getEo
-    rJSON[:omegao] = TLE.getOmegao
-    rJSON[:xmo] = TLE.getXmo
-    rJSON[:xno] = TLE.getXno
-    rJSON[:deepspace] = TLE.isDeepspace
+    response = {}
+    response[:catnum] = TLE.getCatnum
+    response[:name] = TLE.getName
+    response[:setnum] = TLE.getSetnum
+    response[:year] = TLE.getYear
+    response[:refepoch] = TLE.getRefepoch
+    response[:inclination] = TLE.getIncl
+    response[:raan] = TLE.getRaan
+    response[:eccentricity] = TLE.getEccn
+    response[:argper] = TLE.getArgper
+    response[:mean_anomoly] = TLE.getMeanan
+    response[:mean_motion] = TLE.getMeanmo
+    response[:drag] = TLE.getDrag
+    response[:nddot6] = TLE.getNddot6
+    response[:bstar] = TLE.getBstar
+    response[:orbitnum] = TLE.getOrbitnum
+    response[:epoch] = TLE.getEpoch
+    response[:xndt2o] = TLE.getXndt2o
+    response[:xincl] = TLE.getXincl
+    response[:xnodeo] = TLE.getXnodeo
+    response[:eo] = TLE.getEo
+    response[:omegao] = TLE.getOmegao
+    response[:xmo] = TLE.getXmo
+    response[:xno] = TLE.getXno
+    response[:deepspace] = TLE.isDeepspace
 
-    JSON.pretty_generate(rJSON) + "\n"
+    JSON.pretty_generate(response) + "\n"
 end
