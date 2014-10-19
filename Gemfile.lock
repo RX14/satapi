@@ -32,6 +32,7 @@ GEM
     rack-test (0.6.2)
       rack (>= 1.0)
     rainbow (2.0.0)
+    rake (10.1.0)
     rubocop (0.23.0)
       json (>= 1.7.7, < 2)
       parser (~> 2.1.9)
@@ -68,6 +69,7 @@ DEPENDENCIES
   orchestrate (~> 0.9.1)
   puma (~> 2.9.1)
   rack-cache (~> 1.2)
+  rake
   rubocop
   ruby-lint
   sinatra (~> 1.4.5)

@@ -5,6 +5,8 @@ gem "sinatra-contrib", "~> 1.4.2"
 gem "slim", "~> 2.1.0"
 gem "orchestrate", "~> 0.9.1"
 
+gem "rake"
+
 group :development, :production do
     gem "puma", "~> 2.9.1"
     gem "rack-cache", "~> 1.2"
