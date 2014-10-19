@@ -52,8 +52,9 @@ end
 
 get "/api/json/" do
     schema = {
-        TLE: ""
+        tle: "/api/json/tle"
     }
+    JSON.pretty_generate(schema) + "\n"
 end
 
 post "/api/json/tle/extract" do
