@@ -2,18 +2,20 @@
 language: ruby
 # Travis consults .ruby-version etc.
 jdk:
-  - openjdk7
-  - oraclejdk7
-  - oraclejdk8
+    - openjdk7
+    - oraclejdk7
+    - oraclejdk8
 env:
     global:
         - RACK_ENV=test
 
 install:
-  - bundle install --without production development
-  - rake javalibs
+    - cd .
+    - ruby -v
+    - bundle install --without production development
+    - rake javalibs
 
 script:
-  - bundle exec rubocop --format fuubar
-  - shopt -s globstar && ruby -wc **/*.rb
-  - rake spec
+    - bundle exec rubocop --format fuubar
+    - shopt -s globstar && ruby -wc **/*.rb
+    - rake spec
