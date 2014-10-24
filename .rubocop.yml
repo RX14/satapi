@@ -4,6 +4,10 @@ Style/IndentationWidth:
 Style/StringLiterals:
     EnforcedStyle: double_quotes
 
+Style/GlobalVars:
+    AllowedVariabled:
+        - $db
+
 AllCops:
     Exclude:
         - "bin/satapi"

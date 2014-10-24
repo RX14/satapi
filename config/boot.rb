@@ -18,8 +18,7 @@ require "#{PADRINO_ROOT}/lib/commons-lang-2.6.jar"
 require "#{PADRINO_ROOT}/lib/commons-logging-1.1.1.jar"
 require "#{PADRINO_ROOT}/lib/predict4java-1.1.jar"
 
-# rubocop:disable Style/GlobalVars
-$db = Orchestrate::Application.new ENV["ORCHESTRATE_KEY"]
-# rubocop:enable Style/GlobalVars
+$db = Orchestrate::Application.new ENV["ORCHESTRATE_KEY"] \
+    unless RACK_ENV == "test"
 
 Padrino.load!
