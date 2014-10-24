@@ -8,6 +8,14 @@ RSpec.configure do |conf|
     conf.include Rack::Test::Methods
 end
 
+require "vcr"
+require "webmock/rspec"
+
+VCR.configure do |c|
+    c.cassette_library_dir = "vcr_cassettes"
+    c.hook_into :webmock
+end
+
 def app(app = nil, &blk)
     @app ||= block_given? ? app.instance_eval(&blk) : app
     @app ||= Padrino.application

@@ -21,9 +21,14 @@ end
 
 group :test do
     gem "mocha", "1.1.0", require: false
+
     gem "rspec", "3.1.0"
     gem "fuubar", "2.0.0"
+
     gem "rack-test", "0.6.2", require: "rack/test"
+
+    gem "vcr", "2.9.3"
+    gem "webmock", "1.20.0"
 
     gem "ruby-lint", "2.0.2"
     gem "rubocop", github: "bbatsov/rubocop", ref: "cf0a3"
