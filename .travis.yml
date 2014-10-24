@@ -1,6 +1,6 @@
 ---
 language: ruby
-# Travis consults .ruby-version etc.
+# Travis consults .ruby-version
 jdk:
     - openjdk7
     - oraclejdk7
@@ -8,10 +8,9 @@ jdk:
 env:
     global:
         - RACK_ENV=test
+        - JRUBY_OPTS=--2.0
 
 install:
-    - cd .
-    - ruby -v
     - bundle install --without production development
     - rake javalibs
 
