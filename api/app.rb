@@ -8,11 +8,14 @@ module Satapi
         end
 
         before do
-            pass if request.body.class == Puma::NullIO
-            pass if request.body.size <= 0
+            if request.body.class == Puma::NullIO
+                skip  = true
+            elsif request.body.size <= 0
+                skip = true
+            end
 
             request.body.rewind
-            @request_json = JSON.parse(request.body.read)
+            @request_json = JSON.parse(request.body.read) unless skip
         end
     end
 end
