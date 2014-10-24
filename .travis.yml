@@ -11,8 +11,9 @@ jdk:
 
 install:
   - bundle install --without production development
-  - rake deps
+  - rake javalibs
 
 script:
-  - bundle exec rubocop
+  - bundle exec rubocop --format fuubar
   - shopt -s globstar && ruby -wc **/*.rb
+  - rake spec

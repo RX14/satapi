@@ -1,11 +1,9 @@
-Style/CommentIndentation:
-  Enabled: false
-
-Style/IndentHash:
-  Enabled: false
-
 Style/IndentationWidth:
-  Enabled: false
+    Width: 4
 
 Style/StringLiterals:
     EnforcedStyle: double_quotes
+
+AllCops:
+    Exclude:
+        - "bin/satapi"

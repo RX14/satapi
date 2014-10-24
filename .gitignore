@@ -31,7 +31,12 @@ build/
 .rvmrc
 
 #Don't include libraries
-/lib/*.jar
-!/lib/predict4java-1.1.jar
+/lib/commons-lang-*.jar
+/lib/commons-logging-*.jar
 
 .fuse_hidden*
+
+#vendor/gems/*
+#!vendor/gems/cache/
+
+/.env
