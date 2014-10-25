@@ -48,7 +48,7 @@ RSpec.describe "/api/tle" do
             expect(result[:omegao      ].round(7)).to eq(5.5118213)
             expect(result[:xmo         ].round(7)).to eq(0.7617385)
             expect(result[:xno         ].round(6)).to eq(0.06286)
-            expect(result[:deepspace   ]).to be_false
+            expect(result[:deepspace   ]).to be false
             # rubocop:enable Style/SpaceInsideBrackets
 
         end
