@@ -2,10 +2,12 @@ module Satapi
     class Api < Padrino::Application
         register Padrino::Helpers
 
+        # :nocov:
         configure :development do
             use BetterErrors::Middleware
             BetterErrors.application_root = __dir__
         end
+        # :nocov:
 
         before do
             if request.body.class == Puma::NullIO
