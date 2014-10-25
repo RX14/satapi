@@ -5,6 +5,9 @@ require File.expand_path(File.dirname(__FILE__) + "/../config/boot")
 Dir[File.expand_path(File.dirname(__FILE__) + "/../api/helpers/**/*.rb")] \
     .each(&method(:require))
 
+Dir[File.expand_path(File.dirname(__FILE__) + "/api/**/*_examples.rb")] \
+    .each(&method(:require))
+
 require "rr"
 
 RSpec.configure do |conf|
