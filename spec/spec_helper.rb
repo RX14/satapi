@@ -19,6 +19,10 @@ VCR.configure do |c|
     c.hook_into :webmock
 end
 
+rr_ddc = RR::DoubleDefinitions::DoubleDefinitionCreate.new
+client = rr_ddc.mock(Orchestrate::Client, nil)
+$db = Orchestrate::Application.new(client)
+
 def app(app = nil, &blk)
     @app ||= block_given? ? app.instance_eval(&blk) : app
     @app ||= Padrino.application
