@@ -1,11 +1,11 @@
 module Satapi
-    class Api
-        module JavaHelper
-            def uk
-                Java::Uk
-            end
+    module JavaHelper
+        def uk
+            Java::Uk
         end
+    end
 
+    class Api
         helpers JavaHelper
     end
 end
