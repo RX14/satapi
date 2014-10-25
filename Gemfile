@@ -33,6 +33,7 @@ group :test do
     gem "ruby-lint", "2.0.2"
     gem "rubocop", github: "bbatsov/rubocop", ref: "cf0a3"
 
-    gem "simplecov", "", require: false
+    gem "simplecov", "0.9.1", require: false
     gem "coveralls", "0.7.1", require: false
+    gem "codeclimate-test-reporter", "0.4.1", require: false
 end

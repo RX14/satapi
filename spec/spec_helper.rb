@@ -17,7 +17,10 @@ require "webmock/rspec"
 VCR.configure do |c|
     c.cassette_library_dir = "vcr_cassettes"
     c.hook_into :webmock
+    c.ignore_hosts ["codeclimate.com", "coveralls.io"]
 end
+
+WebMock.disable_net_connect!(allow: ["codeclimate.com", "coveralls.io"])
 
 rr_ddc = RR::DoubleDefinitions::DoubleDefinitionCreate.new
 client = rr_ddc.mock(Orchestrate::Client, nil)
