@@ -6,3 +6,4 @@ SimpleCov.start do
         Coveralls::SimpleCov::Formatter,
         CodeClimate::TestReporter::Formatter
     ]
+end

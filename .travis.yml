@@ -10,6 +10,7 @@ env:
     - RACK_ENV=test
     - JRUBY_OPTS=--2.0
     - secure: V8B/QHIug6QUwGFqbiDVK4rDPLKs9QAWj4G+vKttnIfEfZBDt8gciHIyH3o5WsUdeKhFg+GOnJR1I3PgpSq4KiJz87w4WSqcxl3SI8phWTTKNhUvKlrRMN+7DURUgl0b6CgYcUUmXlNqyMpx6t96m5kbtsQJY5RS1wMWZ1hc0qM=
+    - secure: "oFh5GF689E6SaEsjr/TW9YlZkNhb9BKGeax12MxO8iFEyf/tU+otfZ3QpoYRlu0Fa3R+j3fxJwB5WDzJLOq2Py990Ckx6u2GCWDjLEdQNLeEQJU/w+7e5ZdoHRacQ5DeZJTjLiic/VohHRko8o1Wyxh0Fl0Z6AcUzvxJlO6ER3g="
 
 install:
   - bundle install --without production development
