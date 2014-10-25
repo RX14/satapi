@@ -18,7 +18,8 @@ require "webmock/rspec"
 VCR.configure do |c|
     c.cassette_library_dir = "vcr_cassettes"
     c.hook_into :webmock
-    c.ignore_hosts ["codeclimate.com", "coveralls.io"]
+    c.ignore_hosts "codeclimate.com", "coveralls.io"
+    c.ignore_localhost = true
 end
 
 WebMock.disable_net_connect!(allow: ["codeclimate.com", "coveralls.io"])
