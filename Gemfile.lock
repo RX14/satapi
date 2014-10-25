@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/RX14/simplecov-summary.git
+  revision: 9c12f0da98471c26fb93130cf85f53d6a79e3984
+  specs:
+    simplecov-summary (0.0.4)
+      colorize
+      simplecov
+
+GIT
   remote: git://github.com/bbatsov/rubocop.git
   revision: cf0a3da2d237f8aed24ae4d7bab704f25868653e
   ref: cf0a3
@@ -30,6 +38,7 @@ GEM
     codeclimate-test-reporter (0.4.1)
       simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.0)
+    colorize (0.7.3)
     coveralls (0.7.1)
       multi_json (~> 1.3)
       rest-client
@@ -188,5 +197,6 @@ DEPENDENCIES
   rubocop!
   ruby-lint (= 2.0.2)
   simplecov (= 0.9.1)
+  simplecov-summary!
   vcr (= 2.9.3)
   webmock (= 1.20.0)
