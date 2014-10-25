@@ -23,7 +23,6 @@ group :test do
     gem "rr", "1.1.2", require: false
 
     gem "rspec", "3.1.0"
-    gem "fuubar", "2.0.0"
 
     gem "rack-test", "0.6.2", require: "rack/test"
 
