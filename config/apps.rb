@@ -7,7 +7,7 @@ Padrino.configure_apps do
     enable :sessions
     # set :session_secret, ENV["SECRET"]
     set :protection, except: :path_traversal
-    set :protect_from_csrf, true
+    set :protect_from_csrf, true if RACK_ENV == "production"
     set :server, "puma"
 end
 
