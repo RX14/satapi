@@ -10,7 +10,7 @@ Satapi::Api.controllers :tle do
     post :extract do
         request_json = parse_json(request)
         request.body.rewind
-        return "BAD JSON:\n #{request.body.read}" if request_json == nil
+        return "BAD JSON:\n #{request.body.read}" if request_json.nil?
 
         tle_str = normalise_endings(request_json["TLE"])
 
