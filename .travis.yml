@@ -1,20 +1,21 @@
----
 language: ruby
-# Travis consults .ruby-version
+# Travis consults .ruby-version etc.
 jdk:
-    - openjdk7
-    - oraclejdk7
-    - oraclejdk8
+  - openjdk7
+  - oraclejdk7
+  - oraclejdk8
+
 env:
     global:
-        - RACK_ENV=test
-        - JRUBY_OPTS=--2.0
+    - RACK_ENV=test
+    - JRUBY_OPTS=--2.0
+    - secure: V8B/QHIug6QUwGFqbiDVK4rDPLKs9QAWj4G+vKttnIfEfZBDt8gciHIyH3o5WsUdeKhFg+GOnJR1I3PgpSq4KiJz87w4WSqcxl3SI8phWTTKNhUvKlrRMN+7DURUgl0b6CgYcUUmXlNqyMpx6t96m5kbtsQJY5RS1wMWZ1hc0qM=
 
 install:
-    - bundle install --without production development
-    - rake javalibs
+  - bundle install --without production development
+  - rake javalibs
 
 script:
-    - bundle exec rubocop --format fuubar
-    - shopt -s globstar && ruby -wc **/*.rb
-    - rake spec
+  - bundle exec rubocop --format fuubar
+  - shopt -s globstar && ruby -wc **/*.rb
+  - rake spec
