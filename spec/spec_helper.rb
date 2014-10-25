@@ -2,8 +2,9 @@ require "simplecov"
 
 RACK_ENV = "test" unless defined?(RACK_ENV)
 require File.expand_path(File.dirname(__FILE__) + "/../config/boot")
-Dir[File.expand_path(File.dirname(__FILE__) + "/../app/helpers/**/*.rb")] \
+Dir[File.expand_path(File.dirname(__FILE__) + "/../api/helpers/**/*.rb")] \
     .each(&method(:require))
+
 require "rr"
 
 RSpec.configure do |conf|
