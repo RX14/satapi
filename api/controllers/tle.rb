@@ -2,43 +2,47 @@ Satapi::Api.controllers :tle do
 
     get :index do
         schema = {
-            tle: "/api/json/tle"
+            extract: "/api/tle/extract"
         }
         JSON.pretty_generate(schema) + "\n"
     end
 
     post :extract do
-        TLEstr = normalise_endings(@request_json["TLE"])
+        request_json = parse_json(request)
+        request.body.rewind
+        return "BAD JSON:\n #{request.body.read}" if request_json == nil
 
-        TLEdata = TLEstr.split("\n").first 3
+        tle_str = normalise_endings(request_json["TLE"])
 
-        TLE = uk.me.g4dpz.satellite.TLE.new(TLEdata.to_java :String)
+        tle_data = tle_str.split("\n").first 3
+
+        tle = uk.me.g4dpz.satellite.TLE.new(tle_data.to_java(:String))
 
         response = {}
-        response[:catnum] = TLE.getCatnum
-        response[:name] = TLE.getName
-        response[:setnum] = TLE.getSetnum
-        response[:year] = TLE.getYear
-        response[:refepoch] = TLE.getRefepoch
-        response[:inclination] = TLE.getIncl
-        response[:raan] = TLE.getRaan
-        response[:eccentricity] = TLE.getEccn
-        response[:argper] = TLE.getArgper
-        response[:mean_anomoly] = TLE.getMeanan
-        response[:mean_motion] = TLE.getMeanmo
-        response[:drag] = TLE.getDrag
-        response[:nddot6] = TLE.getNddot6
-        response[:bstar] = TLE.getBstar
-        response[:orbitnum] = TLE.getOrbitnum
-        response[:epoch] = TLE.getEpoch
-        response[:xndt2o] = TLE.getXndt2o
-        response[:xincl] = TLE.getXincl
-        response[:xnodeo] = TLE.getXnodeo
-        response[:eo] = TLE.getEo
-        response[:omegao] = TLE.getOmegao
-        response[:xmo] = TLE.getXmo
-        response[:xno] = TLE.getXno
-        response[:deepspace] = TLE.isDeepspace
+        response[:catnum] = tle.getCatnum
+        response[:name] = tle.getName
+        response[:setnum] = tle.getSetnum
+        response[:year] = tle.getYear
+        response[:refepoch] = tle.getRefepoch
+        response[:inclination] = tle.getIncl
+        response[:raan] = tle.getRaan
+        response[:eccentricity] = tle.getEccn
+        response[:argper] = tle.getArgper
+        response[:mean_anomoly] = tle.getMeanan
+        response[:mean_motion] = tle.getMeanmo
+        response[:drag] = tle.getDrag
+        response[:nddot6] = tle.getNddot6
+        response[:bstar] = tle.getBstar
+        response[:orbitnum] = tle.getOrbitnum
+        response[:epoch] = tle.getEpoch
+        response[:xndt2o] = tle.getXndt2o
+        response[:xincl] = tle.getXincl
+        response[:xnodeo] = tle.getXnodeo
+        response[:eo] = tle.getEo
+        response[:omegao] = tle.getOmegao
+        response[:xmo] = tle.getXmo
+        response[:xno] = tle.getXno
+        response[:deepspace] = tle.isDeepspace
 
         JSON.pretty_generate(response) + "\n"
     end
