@@ -8,9 +8,7 @@ gem "jruby-openssl", "0.9.5"
 
 gem "orchestrate", "0.9.1"
 
-group :development, :production do
-    gem "puma", "2.9.1"
-end
+gem "puma", "2.9.1"
 
 group :development do
     gem "dotenv", "1.0.2"
