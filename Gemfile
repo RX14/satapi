@@ -4,7 +4,7 @@ gem "rake", "10.3.2"
 
 gem "padrino", "0.12.4"
 
-gem "jruby-openssl", "0.9.4"
+gem "jruby-openssl", "0.9.5"
 
 gem "orchestrate", "0.9.1"
 
@@ -20,7 +20,7 @@ group :development do
 end
 
 group :test do
-    gem "mocha", "1.1.0", require: false
+    gem "rr", "1.1.2", require: false
 
     gem "rspec", "3.1.0"
     gem "fuubar", "2.0.0"
