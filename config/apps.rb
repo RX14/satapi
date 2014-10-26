@@ -13,3 +13,8 @@ end
 
 # Mounts the core application for this project
 Padrino.mount("api", app_class: "Satapi::Api").to("/api/")
+
+# Padrino.configure_apps do
+#     use BetterErrors::Middleware
+#     BetterErrors.application_root = __dir__
+# end
