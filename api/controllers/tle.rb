@@ -9,14 +9,12 @@ Satapi::Api.controllers :tle do
 
     post :extract do
         request_json = parse_json(request)
-        request.body.rewind
-        return "BAD JSON:\n #{request.body.read}" if request_json.nil?
 
         tle_str = normalise_endings(request_json["TLE"])
 
-        tle_data = tle_str.split("\n").first 3
+        tle_lines = tle_str.split("\n").first 3
 
-        tle = uk.me.g4dpz.satellite.TLE.new(tle_data.to_java(:String))
+        tle = uk.me.g4dpz.satellite.TLE.new(tle_lines.to_java(:String))
 
         response = {}
         response[:catnum] = tle.getCatnum
