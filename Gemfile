@@ -17,6 +17,10 @@ group :development do
     # gem "binding_of_caller", "0.7.3.pre1"
 end
 
+group :development, :test do
+    gem "prmd", "0.6.2"
+end
+
 group :test do
     gem "rr", "1.1.2", require: false
 
