@@ -19,4 +19,4 @@ install:
 script:
   - bundle exec rubocop --format fuubar
   - shopt -s globstar && ruby -wc **/*.rb
-  - rake spec
+  - rake ci
