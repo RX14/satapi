@@ -9,7 +9,7 @@ RSpec.describe "/api/tle" do
         include_examples "JSON"
     end
 
-    describe "/extract" do
+    describe "/process" do
 
         TLE =
 "AO-51 [+]
@@ -17,7 +17,7 @@ RSpec.describe "/api/tle" do
 2 28375 098.0551 118.9086 0084159 315.8041 043.6444 14.40638450251959"
 
         before do
-            post_json "/api/tle/extract", TLE: TLE
+            post_json "/api/tle/process", TLE: TLE
         end
 
         include_examples "JSON"

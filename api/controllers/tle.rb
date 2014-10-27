@@ -7,7 +7,7 @@ Satapi::Api.controllers :tle do
         JSON.pretty_generate(schema) + "\n"
     end
 
-    post :extract do
+    post :process do
         request_json = parse_json(request)
 
         tle_str = normalise_endings(request_json["TLE"])
