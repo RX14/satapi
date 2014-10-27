@@ -18,7 +18,7 @@ group :development do
 end
 
 group :development, :test do
-    gem "prmd", "0.6.2"
+    gem "prmd", github: "interagent/prmd", ref: "d2897"
 end
 
 group :test do

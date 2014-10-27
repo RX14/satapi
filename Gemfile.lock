@@ -18,6 +18,15 @@ GIT
       rainbow (>= 1.99.1, < 3.0)
       ruby-progressbar (~> 1.4)
 
+GIT
+  remote: git://github.com/interagent/prmd.git
+  revision: d28977070dcb7cde17b932c46b8cbad7a8819221
+  ref: d2897
+  specs:
+    prmd (0.6.2)
+      erubis (~> 2.7)
+      json_schema (~> 0.1, >= 0.1.8)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -113,9 +122,6 @@ GEM
       slop (~> 3.4, >= 3.4.5)
     polyglot (0.3.5)
     powerpack (0.0.9)
-    prmd (0.6.2)
-      erubis (~> 2.7)
-      json_schema (~> 0.1)
     puma (2.9.1)
       rack (>= 1.1, < 2.0)
     puma (2.9.1-java)
@@ -189,7 +195,7 @@ DEPENDENCIES
   jruby-openssl (= 0.9.5)
   orchestrate (= 0.9.1)
   padrino (= 0.12.4)
-  prmd (= 0.6.2)
+  prmd!
   puma (= 2.9.1)
   rack-test (= 0.6.2)
   rake (= 10.3.2)
