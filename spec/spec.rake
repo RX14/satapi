@@ -14,7 +14,8 @@ begin
     end
 
     desc "Run complete application spec suite"
-    task "spec" => spec_tasks.map { |f| "spec:#{f}" }.unshift("javalibs")
+    task "spec" => spec_tasks.map { |f| "spec:#{f}" }
+        .unshift("javalibs", "schema")
 rescue LoadError
     puts "RSpec is not part of this bundle, skip specs."
 end
