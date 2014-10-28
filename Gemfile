@@ -10,6 +10,8 @@ gem "orchestrate", "0.9.1"
 
 gem "puma", "2.9.1"
 
+gem "committee", "1.5.2"
+
 group :development do
     gem "dotenv", "1.0.2"
 
