@@ -1,1 +1,9 @@
-{}
+{
+    "description": "An API to access and process information on satellites",
+    "id": "hello-prmd",
+    "links": [{
+        "href": "https://satapi.rx14.co.uk/api",
+        "rel": "self"
+    }],
+    "title": "SatApi API"
+}
