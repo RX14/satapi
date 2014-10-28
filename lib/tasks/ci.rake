@@ -1,1 +1,1 @@
-task ci: ["javalibs", "spec"]#, "schema"]
+task ci: ["javalibs", "spec", "schema"]
