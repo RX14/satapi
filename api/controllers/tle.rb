@@ -1,10 +1,7 @@
 Satapi::Api.controllers :tle do
 
     get :index do
-        schema = {
-            extract: "/api/tle/extract"
-        }
-        JSON.pretty_generate(schema) + "\n"
+        File.read("#{PADRINO_ROOT}/docs/schema/schemata/tle.json")
     end
 
     post :process do
