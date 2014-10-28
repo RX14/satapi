@@ -40,18 +40,18 @@ def post_json(uri, json)
     post(uri, JSON.generate(json), "CONTENT_TYPE" => "application/json")
 end
 
-#Used for indented string
+# Used for indented string
 class String
-  def try(*a, &b)
-    if a.empty? && block_given?
-      yield self
-    else
-      __send__(*a, &b)
+    def try(*a, &b)
+        if a.empty? && block_given?
+            yield self
+        else
+            __send__(*a, &b)
+        end
     end
-  end
 
-  def strip_heredoc
-    indent = scan(/^[ \t]*(?=\S)/).min.try(:size) || 0
-    gsub(/^[ \t]{#{indent}}/, '')
-  end
+    def strip_heredoc
+        indent = scan(/^[ \t]*(?=\S)/).min.try(:size) || 0
+        gsub(/^[ \t]{#{indent}}/, "")
+    end
 end

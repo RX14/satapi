@@ -8,6 +8,12 @@ Style/GlobalVars:
     AllowedVariables:
         - $db
 
+Style/WordArray:
+    Enabled: false
+
+Metrics/LineLength:
+    Max: 100
+
 AllCops:
     Exclude:
         - "bin/satapi"
