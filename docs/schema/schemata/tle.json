@@ -1,100 +1,48 @@
 {
-  "$schema": "http://json-schema.org/draft-04/hyper-schema",
-  "title": "FIXME - Tle",
-  "definitions": {
-    "created_at": {
-      "description": "when tle was created",
-      "example": "2012-01-01T12:00:00Z",
-      "format": "date-time",
-      "type": [
-        "string"
-      ]
-    },
-    "id": {
-      "description": "unique identifier of tle",
-      "example": "01234567-89ab-cdef-0123-456789abcdef",
-      "format": "uuid",
-      "type": [
-        "string"
-      ]
-    },
-    "identity": {
-      "$ref": "/schemata/tle#/definitions/id"
-    },
-    "updated_at": {
-      "description": "when tle was updated",
-      "example": "2012-01-01T12:00:00Z",
-      "format": "date-time",
-      "type": [
-        "string"
-      ]
-    }
-  },
-  "description": "FIXME",
-  "links": [
-    {
-      "description": "Create a new tle.",
-      "href": "/tles",
-      "method": "POST",
-      "rel": "create",
-      "schema": {
-        "properties": {
+    "id": "schemata/tle",
+    "$schema": "http://json-schema.org/draft-04/hyper-schema",
+    "description": "Endpoint for accessing and extracting information out of TLEs",
+    "title": "TLE Store",
+    "type": "object",
+    "definitions": {
+        "TLE": {
+            "description": "A TLE",
+            "example": "AO-51 [+]
+1 28375U 04025K   09105.66391970  .00000003  00000-0  13761-4 0  3643
+2 28375 098.0551 118.9086 0084159 315.8041 043.6444 14.40638450251959",
+            "type": "object",
+            "properties": {
+
+            }
         },
-        "type": [
-          "object"
-        ]
-      },
-      "title": "Create"
+        "norad_id": {
+            "description": "unique identifier of tle",
+            "example": "000001",
+            "format": "uuid",
+            "type": "integer"
+        }
     },
-    {
-      "description": "Delete an existing tle.",
-      "href": "/tles/{(%2Fschemata%2Ftle%23%2Fdefinitions%2Fidentity)}",
-      "method": "DELETE",
-      "rel": "destroy",
-      "title": "Delete"
-    },
-    {
-      "description": "Info for existing tle.",
-      "href": "/tles/{(%2Fschemata%2Ftle%23%2Fdefinitions%2Fidentity)}",
-      "method": "GET",
-      "rel": "self",
-      "title": "Info"
-    },
-    {
-      "description": "List existing tles.",
-      "href": "/tles",
-      "method": "GET",
-      "rel": "instances",
-      "title": "List"
-    },
-    {
-      "description": "Update an existing tle.",
-      "href": "/tles/{(%2Fschemata%2Ftle%23%2Fdefinitions%2Fidentity)}",
-      "method": "PATCH",
-      "rel": "update",
-      "schema": {
-        "properties": {
+    "links": [
+        {
+            "description": "Get Schema",
+            "href": "/tle",
+            "method": "GET",
+            "rel": "describe",
+            "schema": {
+                "properties": {
+                },
+                "type": [
+                    "object"
+                ]
+            },
+            "title": "Create"
         },
-        "type": [
-          "object"
-        ]
-      },
-      "title": "Update"
-    }
-  ],
-  "properties": {
-    "created_at": {
-      "$ref": "/schemata/tle#/definitions/created_at"
-    },
-    "id": {
-      "$ref": "/schemata/tle#/definitions/id"
-    },
-    "updated_at": {
-      "$ref": "/schemata/tle#/definitions/updated_at"
-    }
-  },
-  "type": [
-    "object"
-  ],
-  "id": "schemata/tle"
+        {
+            "description": "Get a ",
+            "href": "/tles/{(%2Fschemata%2Ftle%23%2Fdefinitions%2Fnorad_id)}",
+            "method": "DELETE",
+            "rel": "destroy",
+            "title": "Delete"
+        }
+    ]
 }
