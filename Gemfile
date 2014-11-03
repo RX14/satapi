@@ -8,7 +8,7 @@ gem "jruby-openssl", "0.9.5"
 
 gem "orchestrate", "0.9.1"
 
-gem "puma", "2.9.1"
+gem "puma", "2.9.2"
 
 gem "committee", "1.5.2"
 
@@ -31,10 +31,10 @@ group :test do
     gem "rack-test", "0.6.2", require: "rack/test"
 
     gem "vcr", "2.9.3"
-    gem "webmock", "1.20.0"
+    gem "webmock", "1.20.2"
 
     gem "ruby-lint", "2.0.2"
-    gem "rubocop", github: "bbatsov/rubocop", ref: "cf0a3"
+    gem "rubocop", "0.27.0"
 
     gem "simplecov", "0.9.1", require: false
     gem "coveralls", "0.7.1", require: false
