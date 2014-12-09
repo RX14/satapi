@@ -1,6 +1,7 @@
 GIT
-  remote: git://github.com/RX14/simplecov-summary.git
-  revision: 9c12f0da98471c26fb93130cf85f53d6a79e3984
+  remote: git://github.com/inossidabile/simplecov-summary.git
+  revision: e140adf042244cfa128ff9e56000b4179e96f414
+  ref: e140a
   specs:
     simplecov-summary (0.0.4)
       colorize
@@ -18,7 +19,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (4.1.7)
+    activesupport (4.1.8)
       i18n (~> 0.6, >= 0.6.9)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
@@ -61,17 +62,17 @@ GEM
     jruby-openssl (0.9.5-java)
     json (1.8.1)
     json (1.8.1-java)
-    json_schema (0.3.0)
+    json_schema (0.4.0)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
-    minitest (5.4.2)
+    minitest (5.4.3)
     moneta (0.7.20)
     multi_json (1.10.1)
     multipart-post (2.0.0)
     net-http-persistent (2.9.4)
-    netrc (0.8.0)
+    netrc (0.9.0)
     orchestrate (0.9.1)
       faraday (~> 0.9)
       net-http-persistent (~> 2.9)
@@ -109,7 +110,7 @@ GEM
       padrino-core (= 0.12.4)
     padrino-support (0.12.4)
       activesupport (>= 3.1)
-    parser (2.2.0.pre.6)
+    parser (2.2.0.pre.8)
       ast (>= 1.1, < 3.0)
       slop (~> 3.4, >= 3.4.5)
     polyglot (0.3.5)
@@ -150,7 +151,7 @@ GEM
     ruby-lint (2.0.2)
       parser (~> 2.1, >= 2.1.1)
       slop (~> 3.4, >= 3.4.7)
-    ruby-progressbar (1.6.1)
+    ruby-progressbar (1.7.0)
     safe_yaml (1.0.4)
     simplecov (0.9.1)
       docile (~> 1.1.0)

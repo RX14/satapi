@@ -39,5 +39,5 @@ group :test do
     gem "simplecov", "0.9.1", require: false
     gem "coveralls", "0.7.1", require: false
     gem "codeclimate-test-reporter", "0.4.1", require: false
-    gem "simplecov-summary", require: false, github: "RX14/simplecov-summary"
+    gem "simplecov-summary", require: false, github: "inossidabile/simplecov-summary", ref: "e140a"
 end
