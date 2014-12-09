@@ -43,3 +43,5 @@ build/
 
 /docs/schema/api.json
 /docs/schema/api.md
+
+.idea/
