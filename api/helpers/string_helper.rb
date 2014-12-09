@@ -1,9 +1,11 @@
 module Satapi
     module StringHelper
+        # @param [String] str
         def normalise_endings(str)
             str.encode(str.encoding, universal_newline: true)
         end
 
+        # @param [Rack::Request] req
         def extract_request_body(req)
             return nil if request_body_empty? req
 
@@ -15,6 +17,7 @@ module Satapi
             end
         end
 
+        # @param [Rack::Request] req
         def request_body_empty?(req)
             return true if req.nil?
             return true if req.body.nil?
@@ -24,6 +27,7 @@ module Satapi
             false
         end
     end
+
     class Api
         helpers StringHelper
     end

@@ -4,6 +4,7 @@ module Satapi
     module JSONHelper
         include StringHelper
 
+        # @param [Rack::Request] req
         def parse_json(req)
             body = extract_request_body(req)
 
@@ -14,6 +15,7 @@ module Satapi
             end
         end
     end
+
     class Api
         helpers JSONHelper
     end
