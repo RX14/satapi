@@ -2,6 +2,8 @@ language: ruby
 # Travis consults .ruby-version etc.
 jdk: oraclejdk8
 
+sudo: false
+
 env:
     global:
     - RACK_ENV=test
